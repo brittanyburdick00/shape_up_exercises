@@ -54,6 +54,7 @@ aside a:visted {
 aside a:hover, aside a:focus {
     color: maroon;
 }
+
 footer {
     font-size: 0.9em;
     text-align: center;
