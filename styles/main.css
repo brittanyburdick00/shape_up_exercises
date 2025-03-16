@@ -23,9 +23,12 @@ header img {
     float: left;
     margin-right: 15px;
 }
-section a{
+section a:link{
     color: maroon;
-    text-decoration: none;
+}
+
+section a:visited {
+    color: maroon;
 }
 
 section a:hover, section a:focus {
@@ -40,9 +43,12 @@ aside ul {
     line-height: 1.5;
 }
 
-aside a {
+aside a:link {
     color: steelblue;
-    text-decoration: none;
+}
+
+aside a:visted {
+    color: steelblue;
 }
 
 aside a:hover, aside a:focus {
