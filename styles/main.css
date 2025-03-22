@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     width: 700px;
@@ -12,7 +13,6 @@ body {
     box-shadow: 0px 13px 30px rgba(0, 0, 0, 0.5);
     background-color: white;
 }
-
 h1 {
     font-size: 2.5em;
 }
@@ -50,6 +50,9 @@ section h2 {
 section h3 {
     padding-top: 0.75em;
 }
+section blockquote {
+    text-indent: 1em;
+}
 section a:link, a:visited {
     color: maroon;
 }
@@ -60,7 +63,7 @@ a {
     font-weight: bold;
 }  
 
-/* Sidebar (Aside) */
+/* Sidebar */
 aside {
     border: 2px solid steelblue;
     border-radius: 20px;
@@ -88,6 +91,7 @@ aside a:visited {
 aside a:hover, aside a:focus {
     color: maroon;
 }
+
 footer {
     background-color: steelblue;
     color: white;
