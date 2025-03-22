@@ -37,13 +37,16 @@ header img {
 
 /* Main styles */
 main {
-    padding: 1em;
+    padding: 1.5em;
 }
 section p {
     padding-top: 0.5em;
 }
-section h2{
-    padding: 0.5em 0;
+section h2 {
+    padding-top: 0.5em;
+}
+section h3 {
+    padding-top: 0.5em;
 }
 section a:link, a:visited {
     color: maroon;
@@ -57,7 +60,7 @@ a {
 
 /* Sidebar (Aside) */
 aside {
-    border: 3px solid steelblue;
+    border: 2px solid steelblue;
     border-radius: 20px;
     padding: 15px;
     margin: 20px 0;
@@ -67,10 +70,13 @@ aside h2 {
     color: maroon;
 }
 aside ul {
-    padding-left: 
     line-height: 1.5;
+    margin: 0 0.5em;
+    padding: 0 0.5em;
 }
-
+aside li {
+    padding: .1em;
+}
 aside a:link {
     color: steelblue;
 }
@@ -80,7 +86,6 @@ aside a:visited {
 aside a:hover, aside a:focus {
     color: maroon;
 }
-
 footer {
     background-color: steelblue;
     color: white;
