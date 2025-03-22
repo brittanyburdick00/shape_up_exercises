@@ -40,6 +40,9 @@ header img {
 main {
     padding: 1em;
 }
+main p {
+    padding-top: 0.5em;
+}
 
 section a:link, a:visited {
     color: maroon;
