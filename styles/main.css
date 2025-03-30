@@ -15,6 +15,9 @@ body {
 h1 {
     font-size: 2.5em;
 }
+a {
+    font-weight: bold;
+}
 
 /* Header styles */
 header {
@@ -66,10 +69,7 @@ section {
         color: steelblue;
     }
 }
-a {
-    font-weight: bold;
-}  
-
+  
 /* Sidebar */
 aside {
     border: 2px solid steelblue;
@@ -78,29 +78,28 @@ aside {
     margin: 20px 0;
     flex: 30%;
     float: right;
+    & h2 {
+        padding-bottom: 0.4em;
+        color: maroon;
+    }
+    & ul {
+        line-height: 1.5;
+        margin: 0 0.5em;
+        padding: 0 0.5em;
+    }
+    & li {
+        padding: .1em;
+    }
+    & a:link {
+        color: steelblue;
+    }
+    & a:visited {
+        color: steelblue;
+    }
+    & a:hover, a:focus {
+        color: maroon;
+    }
 }
-aside h2 {
-    padding-bottom: 0.4em;
-    color: maroon;
-}
-aside ul {
-    line-height: 1.5;
-    margin: 0 0.5em;
-    padding: 0 0.5em;
-}
-aside li {
-    padding: .1em;
-}
-aside a:link {
-    color: steelblue;
-}
-aside a:visited {
-    color: steelblue;
-}
-aside a:hover, aside a:focus {
-    color: maroon;
-}
-
 footer {
     background-color: steelblue;
     color: white;
