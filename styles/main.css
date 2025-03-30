@@ -7,7 +7,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    width:100%;
+    width: 900px;
     margin: auto;
     background-color: white;
 }
@@ -44,15 +44,16 @@ header {
 /* Main styles */
 main {
     padding: 0.5em 1.5em;
-    width: 70%;
+    width: auto;
     display: flex;
-    justify-content: space-between;
 }
 
 /* Main section styles */
 section {
-    flex: 2;
-    margin-right: 20px;
+    width: 70%;
+    float: left;
+    margin-right: 2em;
+    margin-bottom: 0.5em;
     & p {
         padding-top: 0.5em;
     }
@@ -79,8 +80,8 @@ aside {
     border-radius: 20px;
     padding: 15px;
     margin: 20px 0;
-    /* flex: 30%; */
-    flex: 1;
+    height: fit-content;
+    float: right;
     & h2 {
         padding-bottom: 0.4em;
         color: maroon;
