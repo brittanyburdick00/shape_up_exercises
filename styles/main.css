@@ -15,6 +15,7 @@ body {
 h1 {
     font-size: 2.5em;
 }
+
 /* Header styles */
 header {
     background: linear-gradient(to bottom, white, lightsteelblue);
@@ -22,20 +23,20 @@ header {
     padding-bottom: 40px;
     text-align: left;
     border-bottom: 3px solid steelblue;
-}
-header h1 {
-    color: steelblue;
-    font-style: italic;
-}
-header h2 {
-    font-size: 1.2em;
-    padding-top: 0.5em;
-}
-header img {
-    float: left;
-    margin-right: 15px;
-    max-width: 120px;
-    min-width: 100px;
+    & h1 {
+        color: steelblue;
+        font-style: italic;
+    }
+    & h2 {
+        font-size: 1.2em;
+        padding-top: 0.5em;
+    }
+    & img {
+        float: left;
+        margin-right: 15px;
+        max-width: 120px;
+        min-width: 100px;
+    }
 }
 /* Main styles */
 main {
@@ -45,23 +46,25 @@ main {
 }
 
 /* Main section styles */
-section p {
-    padding-top: 0.5em;
-}
-section h2 {
-    padding-top: 0.5em;
-}
-section h3 {
-    padding-top: 0.75em;
-}
-section blockquote {
-    padding: 0.5em 0 0.5em 2em;
-}
-section a:link, a:visited {
-    color: maroon;
-}
-section a:hover, section a:focus {
-    color: steelblue;
+section {
+    & p {
+        padding-top: 0.5em;
+    }
+    & h2 {
+        padding-top: 0.5em;
+    }
+    & h3 {
+        padding-top: 0.75em;
+    }
+    & blockquote {
+        padding: 0.5em 0 0.5em 2em;
+    }
+    & a:link, a:visited {
+        color: maroon;
+    }
+    & a:hover, a:focus {
+        color: steelblue;
+    }
 }
 a {
     font-weight: bold;
