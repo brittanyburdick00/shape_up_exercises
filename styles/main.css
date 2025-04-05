@@ -48,6 +48,7 @@ nav.navbar {
 		display: block;
 		padding: 1em;
 		color: white;
+        text-decoration: none;
 		font-weight: normal;
 		margin-top: 0;
 		margin-left: 1px;
@@ -57,6 +58,7 @@ nav.navbar {
 	& a:hover, a:focus, a.current {
 		background-color: steelblue;
 		color: white;
+        text-decoration: underline;
 	}
 	& ul {
 		margin: 0;
@@ -88,7 +90,7 @@ ul.menu {
 		margin-right: 0;
 	}
 	& a.current {
-		color: steelblue;
+		color: white;
         border: 2px solid white;
         border-radius: 20px;
 	}
@@ -109,8 +111,6 @@ ul.submenu {
 	}
 
 }
-
-
 
 /* Main styles */
 main {
