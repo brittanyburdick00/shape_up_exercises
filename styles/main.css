@@ -272,11 +272,15 @@ nav.navbar {
         width: max-content;
         min-width: 10em;
         display: none;
-        border: none;
-        background-color: var(--primary-color);
+        background-color: steelblue;
+        color: var(--light);
         z-index: 10;
-        box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     }
+    .navbar .menu a {
+        padding: .75em;
+    }
+    .menu li:has(.submenu) > a::after {
+        content: '\25BC';
 }
 /* step 7 */
 /* Media query for larger screens */
