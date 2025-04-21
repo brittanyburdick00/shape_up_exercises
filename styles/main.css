@@ -65,11 +65,19 @@ nav.navbar {
 		padding: 0;
 		list-style: none;
 	}
+    & input[type="checkbox"] {
+        display: none; /* Hide checkbox */
+    }
 
 }
+/* Dropdown menu for small screens */
+nav.navbar input[type="checkbox"]:checked + ul.menu {
+    display: block; /* Show the menu when checked */
+}
+
 ul.menu {
-	display: flex;
-	flex-wrap: wrap;
+	display: none;
+	flex-wrap: nowrap;
 	& li {
 		flex-basis: 20%;
 		text-align: center;
@@ -156,7 +164,7 @@ aside {
     padding: 15px;
     margin: 20px 0;
     height: fit-content;
-    float: right;
+    float: none; /* Stack aside below section on small screens */
     & h2 {
         padding-bottom: 0.4em;
         color: maroon;
@@ -187,4 +195,58 @@ footer {
     text-align: center;
     font-size: 0.9vw;
     padding: 15px;
+}
+/* Large screens - Media Queries */
+
+/* 600px and up for larger screens */
+@media (min-width: 600px) {
+    /* Ensure the header is good for larger screens */
+    header h1 {
+        font-size: 2.5vw;
+    }
+
+    /* Stack aside to the right of the section when wide enough */
+    main {
+        flex-direction: row;
+    }
+
+    section {
+        width: 70%;
+        margin-right: 2em;
+    }
+
+    aside {
+        float: right;
+        width: 25%;
+    }
+
+    /* Horizontal navigation bar */
+    ul.menu {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    ul.menu li {
+        width: auto;  /* Auto width for each item */
+    }
+
+    /* Hide the label and checkbox used for mobile dropdown */
+    nav.navbar label {
+        display: none;
+    }
+}
+
+/* 768px and up for extra large screens */
+@media (min-width: 768px) {
+    body {
+        width: 1200px; /* Adjust body width for larger screens */
+    }
+
+    h1 {
+        font-size: 2.5vw;
+    }
+
+    footer {
+        font-size: 1vw;
+    }
 }
