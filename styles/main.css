@@ -41,82 +41,6 @@ header {
     }
 }
 
-/* styles for the navigation bar */
-nav.navbar {
-    background-color: steelblue;
-    & a {
-        display: block;
-        padding: 1em;
-        color: white;
-        text-decoration: none;
-        font-weight: normal;
-        margin-top: 0;
-        margin-left: 1px;
-        margin-right: 1px;
-        margin-bottom: 2px;
-    }
-    & a:hover, a:focus {
-        background-color: steelblue;
-        color: white;
-        text-decoration: underline;
-    }
-    & ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
-}
-ul.menu {
-    display: flex;
-    flex-wrap: wrap;
-    & li {
-        flex-basis: 20%;
-        text-align: center;
-    }
-    & li:has(.submenu) {
-        position: relative;
-    }
-    & > a small {
-        margin-left: 6px;
-    }
-    & :hover > .submenu {
-        display: block;
-    }
-    & > li:first-child a {
-        margin-left: 0;
-    }
-    & > li:last-child a {
-        margin-right: 0;
-    }
-    & a.current {
-        color: white;
-        border: 2px solid white;
-        border-radius: 10px;
-        text-decoration: none;
-        display: inline-block;
-        padding: 5px 15px;
-        margin: 10px;
-    }
-}
-ul.submenu {
-    position: absolute;
-    left: 0;
-    right: 0;
-    background-color: steelblue;
-    color: var(--light);
-    display: none;
-    width: max-content;
-
-    & li {
-        text-align: left;
-    }
-    & > li a {
-        margin: 0 2px 2px;
-    }
-
-}
-
 /* Main styles */
 main {
     padding: 0.5em 1.5em;
@@ -182,7 +106,6 @@ aside {
         color: maroon;
     }
 }
-
 /* Styles for Footer */ 
 footer {
     background-color: steelblue;
@@ -191,43 +114,131 @@ footer {
     font-size: 0.9vw;
     padding: 15px;
 }
-/* Hamburger menu styles */
-.menu-btn {
-    display: block;
-    position: absolute;
-    top: 5px;
-    left: 1em;
-    color: white;
-    font-size: 1.5em;
-    cursor: pointer;
-    z-index: 11;
+
+/* styles for the navigation bar */
+nav.navbar {
+    background-color: steelblue;
+    position: relative;
+    & a {
+        display: block;
+        padding: 1em;
+        color: white;
+        text-decoration: none;
+        font-weight: normal;
+        margin-top: 0;
+        margin-left: 1px;
+        margin-right: 1px;
+        margin-bottom: 2px;
+    }
+    & a:hover, a:focus {
+        background-color: steelblue;
+        color: white;
+        text-decoration: underline;
+    }
+    & ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
 }
-.menu-btn::before {
-    content: '\2630'; /* Hamburger icon */
+.menu li {
+    position: relative;
 }
 
-/* Hide the checkbox */
+.menu li:has(.submenu) small {
+    display: none;
+}
+.menu li:has(.submenu):hover > .submenu {
+    display: block;
+}
+
+.submenu {
+    position: absolute;
+    background-color: var(--primary-color);
+    color: var(--light);
+    display: none;
+    z-index: 10;
+    padding: 0;
+    margin: 0;
+    min-width: 10em;
+    width: max-content;
+}
+.submenu li {
+    width: 100%;
+    border: none;
+}
+
+/* step 6 */
 #menu-toggle {
     position: absolute;
     left: -9999px;
     opacity: 0;
 }
-
-/* Show menu when toggled */
-#menu-toggle:checked ~ nav.navbar ul {
+.menu-btn {
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 1em;
+    padding: 5px 10px;
+    color: var(--light);
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 11;
+}
+.menu-btn::before {
+    content: '\2630';
+}
+#menu-toggle:checked + .menu-btn::before {
+    content: '\00d7';
+    font-size: 1.2em;
+}
+.navbar .menu {
+    display: none;
+    clear: both;
+}
+#menu-toggle:checked ~ .menu {
     display: block;
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
-    background-color: steelblue;
+    background-color: var(--primary-color);
     z-index: 10;
+    border-top: 1px solid var(--light-accent);
+    padding: 0;
+    width: max-content;
+    min-width: 12em;
+    max-width: 50%;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
-
-/* Change hamburger to 'X' when open */
-#menu-toggle:checked + .menu-btn::before {
-    content: '\2715'; /* X icon */
+.navbar .menu li {
+    width: auto;
+    border-bottom: none;
 }
+.menu li:has(.submenu) > a::after {
+    content: '\25B6';
+    display: inline-block;
+    margin-left: 0.5em;
+    font-size: 0.7em;
+    position: relative;
+    top: -1px;
+}
+.submenu {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: max-content;
+    min-width: 10em;
+    z-index: 12;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+.navbar .submenu a {
+    padding: 0.75em 1em;
+    font-size: 90%;
+    line-height: 1.2;
+}
+/* step 6 */
 /* Media query for larger screens */
 @media only screen and (min-width: 620px) {
     header {
@@ -246,52 +257,79 @@ footer {
         order: 2;
     }
 
-    /* Show horizontal menu on larger screens */
-    .menu-btn,#menu-toggle {
-        display: none;
+    /* styles for the navigation bar */
+ nav.navbar {
+    background-color: steelblue;
+    & a {
+        display: block;
+        padding: 1em;
+        color: white;
+        text-decoration: none;
+        font-weight: normal;
+        margin-top: 0;
+        margin-left: 1px;
+        margin-right: 1px;
+        margin-bottom: 2px;
     }
-    .navbar .menu {
-        display: flex;
-        justify-content: space-evenly;
-        position: static;
-        border-top: none;
-        background-color: transparent;
-        width: auto;
-        height: auto;
-        overflow: visible;
-        box-shadow: none;
+    & a:hover, a:focus, a.current {
+    & a:hover, a:focus {
+        background-color: steelblue;
+        color: white;
+        text-decoration: underline;
     }
-    #menu-toggle:checked ~ .menu {
-         display: flex;
-         position: static;
-         width: auto;
-         box-shadow: none;
+    & ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
     }
-    .navbar .menu li {
-        width: auto;
-        border-bottom: none;
+
+}
+ul.menu {
+    display: flex;
+    flex-wrap: wrap;
+    & li {
+        flex-basis: 20%;
+        text-align: center;
     }
-    .submenu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: max-content;
-        min-width: 10em;
-        display: none;
-        border: none;
-        background-color: var(--primary-color);
-        z-index: 10;
-        box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    & li:has(.submenu) {
+        position: relative;
     }
-    .navbar .menu a {
-         padding: .75em;
+    & > a small {
+        margin-left: 6px;
     }
-     .menu li:has(.submenu) > a::after {
-         content: '\25BC';
+    & :hover > .submenu {
+        display: block;
     }
-    .navbar .submenu a {
-        padding: 0.75em 1em;
-        font-size: 100%;
-        line-height: normal;
+    & > li:first-child a {
+        margin-left: 0;
     }
+    & > li:last-child a {
+        margin-right: 0;
+    }
+    & a.current {
+        color: white;
+        border: 2px solid white;
+        border-radius: 10px;
+        text-decoration: none;
+        display: inline-block;
+        padding: 5px 15px;
+        margin: 10px;
+    }
+}
+ul.submenu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: steelblue;
+    color: var(--light);
+    display: none;
+
+    & li {
+        text-align: left;
+    }
+    & > li a {
+        margin: 0 2px 2px;
+    }
+
+}
 }
