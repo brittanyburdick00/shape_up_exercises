@@ -120,7 +120,7 @@ footer {
 nav.navbar {
     background-color: steelblue;
     position: relative;
-    min-height: 1em;
+    min-height: 2.5em;
     & a {
         display: block;
         padding: 1em;
@@ -160,11 +160,6 @@ nav.navbar {
     background-color: var(--primary-color);
     color: var(--light);
     display: none;
-    z-index: 10;
-    padding: 0;
-    margin: 0;
-    min-width: 10em;
-    width: max-content;
 }
 .submenu li {
     width: 100%;
@@ -179,10 +174,10 @@ nav.navbar {
 }
 .menu-btn {
     display: block;
-    position: absolute;
+    position: static;
     top: 5px;
     left: 1em;
-    padding: 5px 10px;
+    padding: 10px;
     color: var(--light);
     font-size: 1.5em;
     cursor: pointer;
@@ -202,16 +197,8 @@ nav.navbar {
 #menu-toggle:checked ~ .menu {
     display: block;
     position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: var(--primary-color);
-    z-index: 10;
-    border-top: 1px solid var(--light-accent);
-    padding: 0;
-    width: max-content;
+    background-color: steelblue;
     min-width: 12em;
-    max-width: 50%;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 .navbar .menu li {
     width: auto;
@@ -242,7 +229,7 @@ nav.navbar {
 /* step 6 */
 
 /* Media query for larger screens */
-@media only screen and (min-width: 620px) {
+@media only screen and (min-width: 725px) {
     header {
         text-align: left;
     }
