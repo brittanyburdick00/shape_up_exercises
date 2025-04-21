@@ -313,7 +313,6 @@ nav.navbar {
             margin-right: 1px;
             margin-bottom: 2px;
         }
-        & a:hover, a:focus, a.current {
         & a:hover, a:focus {
             background-color: steelblue;
             color: white;
