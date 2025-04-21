@@ -189,30 +189,30 @@ footer {
     padding: 15px;
 }
 /* Mobile-first: Dropdown navigation menu */
+/* step 6 */
 #menu-toggle {
     position: absolute;
     left: -9999px;
     opacity: 0;
-}  
+}
 .menu-btn {
     display: block;
     position: absolute;
-    top: 10px;
+    top: 5px;
     left: 1em;
-    color: white;
+    padding: 5px 10px;
+    color: var(--light);
     font-size: 1.5em;
     cursor: pointer;
     z-index: 11;
 }
 .menu-btn::before {
-    content: '\2630'; /* Hamburger icon */
+    content: '\2630';
 }
 #menu-toggle:checked + .menu-btn::before {
-    content: '\00d7'; /* X icon */
+    content: '\00d7';
     font-size: 1.2em;
 }
-  
-  /* Hide horizontal menu on small screens */
 .navbar .menu {
     display: none;
     clear: both;
@@ -222,23 +222,43 @@ footer {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: steelblue;
+    background-color: var(--primary-color);
     z-index: 10;
-    border-top: 1px solid #fff;
+    border-top: 1px solid var(--light-accent);
+    padding: 0;
     width: max-content;
     min-width: 12em;
-    max-width: 80%;
+    max-width: 50%;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
-  
-  /* Stack main content on small screens */
-main {
-    flex-direction: column;
+.navbar .menu li {
+    width: auto;
+    border-bottom: none;
 }
-aside {
-    float: none;
-    width: 100%;
+.menu li:has(.submenu) > a::after {
+    content: '\25B6';
+    display: inline-block;
+    margin-left: 0.5em;
+    font-size: 0.7em;
+    position: relative;
+    top: -1px;
 }
+.submenu {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: max-content;
+    min-width: 10em;
+    z-index: 12;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+.navbar .submenu a {
+    padding: 0.75em 1em;
+    font-size: 90%;
+    line-height: 1.2;
+}
+/* step 6 */
   
   /* Media query for larger screens */
 @media (min-width: 700px) {
