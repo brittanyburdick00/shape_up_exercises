@@ -22,15 +22,15 @@ a {
 header {
     background: linear-gradient(to bottom, white, lightsteelblue);
     padding: 20px;
-    padding-bottom: 40px;
     text-align: left;
     border-bottom: 3px solid steelblue;
     & h1 {
         color: steelblue;
         font-style: italic;
+        font-size: clamp(40px, 15%, 66px);;
     }
     & h2 {
-        font-size: 1.2vw;
+        font-size: clamp(20px, 15%, 40px);;
         padding-top: 0.5em;
     }
     & img {
@@ -38,6 +38,7 @@ header {
         margin-right: 15px;
         max-width: 120px;
         min-width: 100px;
+        width: clamp(100px, 15%, 120px);
     }
 }
 
