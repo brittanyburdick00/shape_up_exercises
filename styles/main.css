@@ -1,3 +1,5 @@
+/* First CSS - Modified with Mobile-First Approach */
+
 /* Reset selector */
 * {
     margin: 0;
@@ -44,76 +46,67 @@ header {
 /* styles for the navigation bar */
 nav.navbar {
     background-color: steelblue;
-    & a {
-        display: block;
-        padding: 1em;
-        color: white;
-        text-decoration: none;
-        font-weight: normal;
-        margin-top: 0;
-        margin-left: 1px;
-        margin-right: 1px;
-        margin-bottom: 2px;
-    }
-    & a:hover, a:focus {
-        background-color: steelblue;
-        color: white;
-        text-decoration: underline;
-    }
-    & ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
 }
-ul.menu {
-    display: flex;
-    flex-wrap: wrap;
-    & li {
-        flex-basis: 20%;
-        text-align: center;
-    }
-    & li:has(.submenu) {
-        position: relative;
-    }
-    & > a small {
-        margin-left: 6px;
-    }
-    & :hover > .submenu {
-        display: block;
-    }
-    & > li:first-child a {
-        margin-left: 0;
-    }
-    & > li:last-child a {
-        margin-right: 0;
-    }
-    & a.current {
-        color: white;
-        border: 2px solid white;
-        border-radius: 10px;
-        text-decoration: none;
-        display: inline-block;
-        padding: 5px 15px;
-        margin: 10px;
-    }
-}
-ul.submenu {
-    position: absolute;
-    left: 0;
-    right: 0;
-    background-color: steelblue;
-    color: var(--light);
+/* Hide horizontal menu by default */
+nav.navbar ul {
     display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+nav.navbar a {
+    display: block;
+    padding: 1em;
+    color: white;
+    text-decoration: none;
+    font-weight: normal;
+    margin-top: 0;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-bottom: 2px;
+}
+nav.navbar a:hover, nav.navbar a:focus {
+    background-color: steelblue;
+    color: white;
+    text-decoration: underline;
+}
 
-    & li {
-        text-align: left;
-    }
-    & > li a {
-        margin: 0 2px 2px;
-    }
+/* Hamburger menu styles */
+.menu-btn {
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 1em;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 11;
+}
+.menu-btn::before {
+    content: '\2630'; /* Hamburger icon */
+}
 
+/* Hide the checkbox */
+#menu-toggle {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+}
+
+/* Show menu when toggled */
+#menu-toggle:checked ~ nav.navbar ul {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: steelblue;
+    z-index: 10;
+}
+
+/* Change hamburger to 'X' when open */
+#menu-toggle:checked + .menu-btn::before {
+    content: '\2715'; /* X icon */
 }
 
 /* Main styles */
@@ -121,13 +114,13 @@ main {
     padding: 0.5em 1.5em;
     width: auto;
     display: flex;
+    flex-direction: column; /* Stack content on small screens */
 }
 
 /* Main section styles */
 section {
-    width: 70%;
-    float: left;
-    margin-right: 2em;
+    width: 100%; /* Take full width on small screens */
+    margin-right: 0; /* Remove right margin on small screens */
     margin-bottom: 0.5em;
     & p {
         padding-top: 0.5em;
@@ -156,7 +149,7 @@ aside {
     padding: 15px;
     margin: 20px 0;
     height: fit-content;
-    float: right;
+    width: 100%; /* Take full width on small screens */
     & h2 {
         padding-bottom: 0.4em;
         color: maroon;
@@ -188,104 +181,34 @@ footer {
     font-size: 0.9vw;
     padding: 15px;
 }
-/* Mobile-first: Dropdown navigation menu */
-/* step 6 */
-#menu-toggle {
-    position: absolute;
-    left: -9999px;
-    opacity: 0;
-}
-.menu-btn {
-    display: block;
-    position: absolute;
-    top: 5px;
-    left: 1em;
-    padding: 5px 10px;
-    color: var(--light);
-    font-size: 1.5em;
-    cursor: pointer;
-    z-index: 11;
-}
-.menu-btn::before {
-    content: '\2630';
-}
-#menu-toggle:checked + .menu-btn::before {
-    content: '\00d7';
-    font-size: 1.2em;
-}
-.navbar .menu {
-    display: none;
-    clear: both;
-}
-#menu-toggle:checked ~ .menu {
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: var(--primary-color);
-    z-index: 10;
-    border-top: 1px solid var(--light-accent);
-    padding: 0;
-    width: max-content;
-    min-width: 12em;
-    max-width: 50%;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-}
-.navbar .menu li {
-    width: auto;
-    border-bottom: none;
-}
-.menu li:has(.submenu) > a::after {
-    content: '\25B6';
-    display: inline-block;
-    margin-left: 0.5em;
-    font-size: 0.7em;
-    position: relative;
-    top: -1px;
-}
-.submenu {
-    position: absolute;
-    left: 100%;
-    top: 0;
-    width: max-content;
-    min-width: 10em;
-    z-index: 12;
-    border: none;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-}
-.navbar .submenu a {
-    padding: 0.75em 1em;
-    font-size: 90%;
-    line-height: 1.2;
-}
-/* step 6 */
-  
-  /* Media query for larger screens */
-@media (min-width: 700px) {
-    /* Show horizontal menu, hide menu button */
-    .menu-btn,
-    #menu-toggle {
-      display: none;
+
+/* Media query for larger screens */
+@media (min-width: 620px) {
+    header {
+        text-align: left;
     }
-    .navbar .menu {
-      display: flex;
-      position: static;
-      background-color: steelblue;
-      width: 100%;
-      box-shadow: none;
-    }
-    .navbar .menu li {
-      width: auto;
-    }
-    /* Main content side-by-side */
     main {
-      flex-direction: row;
+        flex-direction: row; /* Display side-by-side on larger screens */
     }
     section {
-      width: 70%;
+        width: 70%; /* Back to 70% width on larger screens */
+        margin-right: 2em; /* Restore right margin on larger screens */
     }
     aside {
-      width: 30%;
+        width: 30%; /* Back to 30% width on larger screens */
+    }
+
+    /* Show horizontal menu on larger screens */
+    nav.navbar ul {
+        display: flex;
+        position: static;
+        width: auto;
+        background-color: transparent;
+    }
+    nav.navbar li {
+        flex-basis: auto;
+    }
+    .menu-btn {
+        display: none; /* Hide hamburger button on larger screens */
     }
 }
-  
