@@ -254,11 +254,8 @@ nav.navbar {
         justify-content: space-evenly;
         position: static;
         border-top: none;
-        background-color: transparent;
-        width: auto;
-        height: auto;
-        overflow: visible;
-        box-shadow: none;
+        background-color: steelblue;
+
     }
     #menu-toggle:checked ~ .menu {
          display: flex;
@@ -267,9 +264,15 @@ nav.navbar {
          box-shadow: none;
     }
     .navbar .menu li {
-        width: auto;
-        border-bottom: none;
+        position: relative;
     }
+    .navbar .menu li a {
+        display: block;
+        padding: 1em 1.5em;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
     .submenu {
         position: absolute;
         top: 100%;
@@ -340,8 +343,8 @@ nav.navbar {
             border: 2px solid white;
             border-radius: 10px;
             text-decoration: none;
-            display: inline-block;
-            padding: 5px 15px;
+            /* display: inline-block; */
+            padding: 0.75em 1.25em;
             margin: 10px;
         }
     }
