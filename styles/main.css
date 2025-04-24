@@ -13,8 +13,7 @@ body {
 }
 
 h1 {
-    /* font-size: 2.5vw; */
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: 2.5vw;
 }
 
 a {
@@ -55,6 +54,8 @@ main {
     display: flex;
     flex-direction: column;
 }
+
+/* Section styles */
 section {
     width: 100%;
     float: left;
@@ -62,38 +63,6 @@ section {
     margin-bottom: 0.5em;
 }
 
-/* Sidebar (aside) styles */
-aside {
-    border: 2px solid steelblue;
-    border-radius: 20px;
-    padding: 15px;
-    margin: 20px 0;
-    height: fit-content;
-    width: 100%;
-    float: right;
-}
-aside h2 {
-    padding-bottom: 0.4em;
-    color: maroon;
-}
-aside ul {
-    list-style-type: none;
-    line-height: 1.5;
-    margin: 0 0.5em;
-    padding: 0 0.5em;
-}
-aside li {
-    padding: 0.2em 0;
-}
-aside a:link,
-aside a:visited {
-    color: steelblue;
-}
-aside a:hover,
-aside a:focus {
-    color: maroon;
-}
-/* Section styles */
 section p,
 section h2,
 section h3 {
@@ -107,6 +76,7 @@ section h3 {
 section blockquote {
     padding: 0.5em 0 0.5em 2em;
 }
+
 section a:link,
 section a:visited {
     color: maroon;
@@ -115,6 +85,42 @@ section a:visited {
 section a:hover,
 section a:focus {
     color: steelblue;
+}
+
+/* Sidebar (aside) styles */
+aside {
+    border: 2px solid steelblue;
+    border-radius: 20px;
+    padding: 15px;
+    margin: 20px 0;
+    height: fit-content;
+    width: 100%;
+    float: right;
+}
+
+aside h2 {
+    padding-bottom: 0.4em;
+    color: maroon;
+}
+
+aside ul {
+    line-height: 1.5;
+    margin: 0 0.5em;
+    padding: 0 0.5em;
+}
+
+aside li {
+    padding: 0.1em;
+}
+
+aside a:link,
+aside a:visited {
+    color: steelblue;
+}
+
+aside a:hover,
+aside a:focus {
+    color: maroon;
 }
 
 /* Footer styles */
@@ -133,6 +139,29 @@ nav.navbar {
     min-height: 2.5em;
 }
 
+nav.navbar a {
+    display: block;
+    padding: 1em;
+    color: white;
+    text-decoration: none;
+    font-weight: normal;
+    margin: 0 1px 2px;
+}
+
+nav.navbar a:hover,
+nav.navbar a:focus {
+    background-color: steelblue;
+    color: white;
+    text-decoration: underline;
+}
+
+nav.navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Mobile menu toggle */
 #menu-toggle {
     position: absolute;
     left: -9999px;
@@ -141,83 +170,73 @@ nav.navbar {
 
 .menu-btn {
     display: block;
+    position: static;
+    top: 5px;
+    left: 1em;
     padding: 10px;
     color: white;
     font-size: 1.5em;
     cursor: pointer;
-    background-color: steelblue;
-    text-align: left;
+    z-index: 11;
 }
 
 .menu-btn::before {
-    content: '\2630'; /* Hamburger */
+    content: '\2630';
 }
 
 #menu-toggle:checked + .menu-btn::before {
-    content: '\2716'; /* X symbol */
+    content: '\00d7';
+    font-size: 1.2em;
 }
 
 .navbar .menu {
     display: none;
     clear: both;
-    background-color: steelblue;
-    position: static;
 }
 
 #menu-toggle:checked ~ .menu {
-    display: flex;
-}
-
-.navbar .menu li {
-    border-top: 1px solid white;
-    position: relative;
-}
-
-.navbar .menu li a {
     display: block;
-    padding: 1em;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.navbar .menu  a.current {
-    color: white;
-    border: 2px solid white;
-    border-radius: 10px;
-    text-decoration: none;
-    display: inline-block;
-    padding: 5px 15px;
-    margin: 10px
-}
-
-.navbar .menu li ul.submenu {
-    display: none;
+    position: absolute;
     background-color: steelblue;
-    padding-left: 1em;
+    min-width: 12em;
 }
 
-.navbar .menu li:hover > ul.submenu {
-    display: block;
+/* Menu items */
+.navbar .menu li {
+    position: relative;
+    width: auto;
+    border-bottom: none;
 }
 
-.navbar .menu li ul.submenu a::before {
+.navbar .menu li a::after {
     content: '\25B6';
-    position: absolute; /* Right-pointing triangle */
-    margin-right: 0.5em;
+    display: inline-block;
+    margin-left: 0.5em;
     font-size: 0.7em;
+    position: relative;
+    top: -1px;
 }
 
-.navbar .submenu li a {
-    padding: 0.75em 1em;
+/* Submenu */
+.submenu {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: max-content;
+    min-width: 10em;
+    z-index: 12;
+    border: none;
+    background-color: steelblue;
     color: white;
-    text-decoration: none;
-    font-weight: bold;
+    display: none;
 }
 
-.navbar .submenu li a:hover {
-    text-decoration: underline;
+.navbar .submenu a {
+    padding: 0.75em 1em;
+    font-size: 90%;
+    line-height: 1.2;
 }
+
 
 /* Media queries for larger screens */
 @media only screen and (min-width: 725px) {
