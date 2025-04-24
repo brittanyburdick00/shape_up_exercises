@@ -351,13 +351,17 @@ nav.navbar {
     ul.submenu {
         position: absolute;
         left: 0;
-        right: 0;
         background-color: steelblue;
-        color: var(--light);
+        color: white;
         display: none;
+        min-width: 10em;
+        width: max-content; 
+        white-space: nowrap;
+        z-index: 999;
 
         & li {
             text-align: left;
+            width: 100%;
         }
         & > li a {
             margin: 0 2px 2px;
