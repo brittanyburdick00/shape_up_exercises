@@ -11,11 +11,9 @@ body {
     margin: auto;
     background-color: white;
 }
-
 h1 {
     font-size: 2.5vw;
 }
-
 a {
     font-weight: bold;
 }
@@ -26,25 +24,22 @@ header {
     padding: 20px;
     text-align: left;
     border-bottom: 3px solid steelblue;
-}
-
-header h1 {
-    color: steelblue;
-    font-style: italic;
-    font-size: clamp(40px, 15%, 66px);
-}
-
-header h2 {
-    font-size: clamp(20px, 15%, 40px);
-    padding-top: 0.5em;
-}
-
-header img {
-    float: left;
-    margin-right: 15px;
-    max-width: 120px;
-    min-width: 100px;
-    width: clamp(100px, 15%, 120px);
+    & h1 {
+        color: steelblue;
+        font-style: italic;
+        font-size: clamp(40px, 15%, 66px);;
+    }
+    & h2 {
+        font-size: clamp(20px, 15%, 40px);;
+        padding-top: 0.5em;
+    }
+    & img {
+        float: left;
+        margin-right: 15px;
+        max-width: 120px;
+        min-width: 100px;
+        width: clamp(100px, 15%, 120px);
+    }
 }
 
 /* Main styles */
@@ -55,39 +50,33 @@ main {
     flex-direction: column;
 }
 
-/* Section styles */
+/* Main section styles */
 section {
     width: 100%;
     float: left;
     margin-right: 0;
     margin-bottom: 0.5em;
+    & p {
+        padding-top: 0.5em;
+    }
+    & h2 {
+        padding-top: 0.5em;
+    }
+    & h3 {
+        padding-top: 0.75em;
+    }
+    & blockquote {
+        padding: 0.5em 0 0.5em 2em;
+    }
+    & a:link, a:visited {
+        color: maroon;
+    }
+    & a:hover, a:focus {
+        color: steelblue;
+    }
 }
 
-section p,
-section h2,
-section h3 {
-    padding-top: 0.5em;
-}
-
-section h3 {
-    padding-top: 0.75em;
-}
-
-section blockquote {
-    padding: 0.5em 0 0.5em 2em;
-}
-
-section a:link,
-section a:visited {
-    color: maroon;
-}
-
-section a:hover,
-section a:focus {
-    color: steelblue;
-}
-
-/* Sidebar (aside) styles */
+/* Sidebar */
 aside {
     border: 2px solid steelblue;
     border-radius: 20px;
@@ -96,34 +85,29 @@ aside {
     height: fit-content;
     width: 100%;
     float: right;
+    & h2 {
+        padding-bottom: 0.4em;
+        color: maroon;
+    }
+    & ul {
+        line-height: 1.5;
+        margin: 0 0.5em;
+        padding: 0 0.5em;
+    }
+    & li {
+        padding: .1em;
+    }
+    & a:link {
+        color: steelblue;
+    }
+    & a:visited {
+        color: steelblue;
+    }
+    & a:hover, a:focus {
+        color: maroon;
+    }
 }
-
-aside h2 {
-    padding-bottom: 0.4em;
-    color: maroon;
-}
-
-aside ul {
-    line-height: 1.5;
-    margin: 0 0.5em;
-    padding: 0 0.5em;
-}
-
-aside li {
-    padding: 0.1em;
-}
-
-aside a:link,
-aside a:visited {
-    color: steelblue;
-}
-
-aside a:hover,
-aside a:focus {
-    color: maroon;
-}
-
-/* Footer styles */
+/* Styles for Footer */ 
 footer {
     background-color: steelblue;
     color: white;
@@ -132,42 +116,62 @@ footer {
     padding: 15px;
 }
 
-/* Navigation bar */
+/* styles for the navigation bar */
 nav.navbar {
     background-color: steelblue;
     position: relative;
     min-height: 2.5em;
+    & a {
+        display: block;
+        padding: 1em;
+        color: white;
+        text-decoration: none;
+        font-weight: normal;
+        margin-top: 0;
+        margin-left: 1px;
+        margin-right: 1px;
+        margin-bottom: 2px;
+    }
+    & a:hover, a:focus {
+        background-color: steelblue;
+        color: white;
+        text-decoration: underline;
+    }
+    & ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+}
+.menu li {
+    position: relative;
 }
 
-nav.navbar a {
+.menu li:has(.submenu) small {
+    display: none;
+}
+.menu li:has(.submenu):hover > .submenu {
     display: block;
-    padding: 1em;
-    color: white;
-    text-decoration: none;
-    font-weight: normal;
-    margin: 0 1px 2px;
 }
 
-nav.navbar a:hover,
-nav.navbar a:focus {
+.submenu {
+    position: absolute;
     background-color: steelblue;
     color: white;
-    text-decoration: underline;
+    display: none;
+}
+.submenu li {
+    width: 100%;
+    border: none;
 }
 
-nav.navbar ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-/* Mobile menu toggle */
+/* step 6 */
 #menu-toggle {
     position: absolute;
     left: -9999px;
     opacity: 0;
 }
-
 .menu-btn {
     display: block;
     position: static;
@@ -179,36 +183,28 @@ nav.navbar ul {
     cursor: pointer;
     z-index: 11;
 }
-
 .menu-btn::before {
     content: '\2630';
 }
-
 #menu-toggle:checked + .menu-btn::before {
     content: '\00d7';
     font-size: 1.2em;
 }
-
 .navbar .menu {
     display: none;
     clear: both;
 }
-
 #menu-toggle:checked ~ .menu {
     display: block;
     position: absolute;
     background-color: steelblue;
     min-width: 12em;
 }
-
-/* Menu items */
 .navbar .menu li {
-    position: relative;
     width: auto;
     border-bottom: none;
 }
-
-.navbar .menu li a::after {
+.menu li:has(.submenu) > a::after {
     content: '\25B6';
     display: inline-block;
     margin-left: 0.5em;
@@ -216,8 +212,6 @@ nav.navbar ul {
     position: relative;
     top: -1px;
 }
-
-/* Submenu */
 .submenu {
     position: absolute;
     left: 100%;
@@ -226,11 +220,7 @@ nav.navbar ul {
     min-width: 10em;
     z-index: 12;
     border: none;
-    background-color: steelblue;
-    color: white;
-    display: none;
 }
-
 .navbar .submenu a {
     padding: 0.75em 1em;
     font-size: 90%;
