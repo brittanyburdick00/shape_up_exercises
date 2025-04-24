@@ -76,7 +76,7 @@ section {
         color: steelblue;
     }
     & li {
-        list-style-type: square;
+       
     }
 }
 
@@ -247,9 +247,9 @@ nav.navbar {
     }
     aside {
         width: 30%; 
-        or
-        der: 2;
+        order: 2;
     }
+
     /* Hide mobile nav toggles */
     .menu-btn,
     #menu-toggle {
@@ -260,6 +260,7 @@ nav.navbar {
         justify-content: space-evenly;
         position: static;
         background-color: steelblue;
+        border-top: none;
 
     }
     #menu-toggle:checked ~ .menu {
