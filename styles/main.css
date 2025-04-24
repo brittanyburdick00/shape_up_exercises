@@ -13,7 +13,8 @@ body {
 }
 
 h1 {
-    font-size: 2.5vw;
+    /* font-size: 2.5vw; */
+    font-size: clamp(2rem, 5vw, 3rem);
 }
 
 a {
@@ -54,37 +55,11 @@ main {
     display: flex;
     flex-direction: column;
 }
-
-/* Section styles */
 section {
     width: 100%;
     float: left;
     margin-right: 0;
     margin-bottom: 0.5em;
-}
-
-section p,
-section h2,
-section h3 {
-    padding-top: 0.5em;
-}
-
-section h3 {
-    padding-top: 0.75em;
-}
-
-section blockquote {
-    padding: 0.5em 0 0.5em 2em;
-}
-
-section a:link,
-section a:visited {
-    color: maroon;
-}
-
-section a:hover,
-section a:focus {
-    color: steelblue;
 }
 
 /* Sidebar (aside) styles */
@@ -97,30 +72,40 @@ aside {
     width: 100%;
     float: right;
 }
-
 aside h2 {
     padding-bottom: 0.4em;
     color: maroon;
 }
-
 aside ul {
+    list-style-type: none;
     line-height: 1.5;
     margin: 0 0.5em;
     padding: 0 0.5em;
 }
-
 aside li {
-    padding: 0.1em;
+    padding: 0.2em 0;
 }
-
 aside a:link,
 aside a:visited {
     color: steelblue;
 }
-
 aside a:hover,
 aside a:focus {
     color: maroon;
+}
+/* Section styles */
+section p,
+section h2,
+section h3 {
+    padding-top: 0.5em;
+}
+
+section h3 {
+    padding-top: 0.75em;
+}
+
+section blockquote {
+    padding: 0.5em 0 0.5em 2em;
 }
 
 /* Footer styles */
@@ -161,7 +146,12 @@ nav.navbar ul {
     list-style: none;
 }
 
-/* Mobile menu toggle */
+/* Navbar - Mobile First */
+nav.navbar {
+    background-color: steelblue;
+    position: relative;
+}
+
 #menu-toggle {
     position: absolute;
     left: -9999px;
@@ -170,150 +160,182 @@ nav.navbar ul {
 
 .menu-btn {
     display: block;
-    position: static;
-    top: 5px;
-    left: 1em;
     padding: 10px;
     color: white;
     font-size: 1.5em;
     cursor: pointer;
-    z-index: 11;
+    background-color: steelblue;
+    text-align: left;
 }
 
 .menu-btn::before {
-    content: '\2630';
+    content: '\2630'; /* Hamburger */
 }
 
 #menu-toggle:checked + .menu-btn::before {
-    content: '\00d7';
-    font-size: 1.2em;
+    content: '\2716'; /* X symbol */
 }
 
 .navbar .menu {
     display: none;
-    clear: both;
+    flex-direction: column;
+    width: 100%;
+    background-color: steelblue;
+    position: static;
 }
 
 #menu-toggle:checked ~ .menu {
-    display: block;
-    position: absolute;
-    background-color: steelblue;
-    min-width: 12em;
+    display: flex;
 }
 
-/* Menu items */
 .navbar .menu li {
+    border-top: 1px solid white;
     position: relative;
-    width: auto;
-    border-bottom: none;
 }
 
-.navbar .menu li a::after {
-    content: '\25B6';
-    display: inline-block;
-    margin-left: 0.5em;
-    font-size: 0.7em;
-    position: relative;
-    top: -1px;
-}
-
-/* Submenu */
-.submenu {
-    position: absolute;
-    left: 100%;
-    top: 0;
-    width: max-content;
-    min-width: 10em;
-    z-index: 12;
-    border: none;
-    background-color: steelblue;
+.navbar .menu li a {
+    display: block;
+    padding: 1em;
     color: white;
-    display: none;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.navbar .submenu a {
+.navbar .menu li a.current {
+    border: 2px solid white;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+.navbar .menu li ul.submenu {
+    display: none;
+    background-color: steelblue;
+    padding-left: 1em;
+}
+
+.navbar .menu li:hover > ul.submenu {
+    display: block;
+}
+
+.navbar .menu li ul.submenu li a::before {
+    content: '\25B6'; /* Right-pointing triangle */
+    margin-right: 0.5em;
+    font-size: 0.7em;
+}
+
+.navbar .submenu li a {
     padding: 0.75em 1em;
-    font-size: 90%;
-    line-height: 1.2;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar .submenu li a:hover {
+    text-decoration: underline;
 }
 
 /* Media queries for larger screens */
 @media only screen and (min-width: 725px) {
     header {
-        text-align: left;
+      text-align: left;
     }
-
+  
     main {
-        flex-direction: row;
+      flex-direction: row;
     }
-
+  
     section {
-        width: 70%;
-        margin-right: 2em;
-        order: 1;
+      width: 70%;
+      margin-right: 2em;
+      order: 1;
     }
-
+  
     aside {
-        width: 30%;
-        order: 2;
+      width: 30%;
+      order: 2;
     }
-
+  
     .menu-btn,
     #menu-toggle {
-        display: none;
+      display: none;
     }
-
+  
     .navbar .menu {
-        display: flex;
-        justify-content: space-evenly;
-        position: static;
-        background-color: transparent;
-        width: auto;
-        height: auto;
-        overflow: visible;
-        box-shadow: none;
+      display: flex;
+      justify-content: center;
+      background-color: steelblue;
+      padding: 0;
+      margin: 0;
+      list-style: none;
     }
-
+  
     .navbar .menu li {
-        flex-basis: 20%;
-        text-align: center;
-        width: auto;
+      position: relative;
     }
-
-    .navbar .menu a {
-        padding: 0.75em;
+  
+    .navbar .menu li a {
+      display: block;
+      padding: 1em 1.5em;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
     }
-
+  
+    .navbar .menu li a.current {
+      border: 2px solid white;
+      border-radius: 8px;
+      padding: 0.75em 1.25em;
+      text-decoration: none;
+    }
+  
+    /* Add dropdown triangle only if li contains submenu */
+    .navbar .menu li > ul.submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: steelblue;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      z-index: 999;
+      min-width: 12em;
+    }
+  
+    .navbar .menu li:hover > .submenu {
+      display: block;
+    }
+  
     .navbar .menu li a::after {
-        content: '\25BC';
+      content: '';
     }
-
-    .submenu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        display: none;
+  
+    /* Add dropdown triangle only for menu items with a submenu */
+    .navbar .menu li > .submenu {
+      display: none;
     }
-
-    .menu li:hover > .submenu {
-        display: block;
+  
+    .navbar .menu li:hover > a::after {
+      content: '\\25BC'; /* ▼ */
+      font-size: 0.75em;
+      margin-left: 0.4em;
     }
-
-    .navbar .menu a.current {
-        color: white;
-        border: 2px solid white;
-        border-radius: 10px;
-        text-decoration: none;
-        display: inline-block;
-        padding: 5px 15px;
-        margin: 10px;
+  
+    .navbar .submenu li a {
+      padding: 0.75em 1em;
+      display: block;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
     }
-
-    .submenu li {
-        text-align: left;
+  
+    .navbar .submenu li a:hover,
+    .navbar .submenu li a:focus {
+      text-decoration: underline;
     }
-
-    .submenu li a {
-        margin: 0 2px 2px;
+  
+    .navbar .submenu li a::after {
+      content: ''; /* no triangle after submenu items */
     }
-}
+  }
+  
