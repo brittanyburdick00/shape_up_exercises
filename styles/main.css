@@ -107,6 +107,15 @@ section h3 {
 section blockquote {
     padding: 0.5em 0 0.5em 2em;
 }
+section a:link,
+section a:visited {
+    color: maroon;
+}
+
+section a:hover,
+section a:focus {
+    color: steelblue;
+}
 
 /* Footer styles */
 footer {
@@ -122,34 +131,6 @@ nav.navbar {
     background-color: steelblue;
     position: relative;
     min-height: 2.5em;
-}
-
-nav.navbar a {
-    display: block;
-    padding: 1em;
-    color: white;
-    text-decoration: none;
-    font-weight: normal;
-    margin: 0 1px 2px;
-}
-
-nav.navbar a:hover,
-nav.navbar a:focus {
-    background-color: steelblue;
-    color: white;
-    text-decoration: underline;
-}
-
-nav.navbar ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-/* Navbar - Mobile First */
-nav.navbar {
-    background-color: steelblue;
-    position: relative;
 }
 
 #menu-toggle {
