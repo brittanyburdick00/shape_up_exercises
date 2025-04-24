@@ -238,17 +238,19 @@ nav.navbar {
         text-align: left;
     }
     main {
-        flex-direction: row; /* Display side-by-side on larger screens */
+        flex-direction: row;
     }
     section {
-        width: 70%; /* Back to 70% width on larger screens */
+        width: 70%; 
         margin-right: 2em; 
-        order: 1; /* Restore right margin on larger screens */
+        order: 1; 
     }
     aside {
-        width: 30%; /* Back to 30% width on larger screens */
-        order: 2;
+        width: 30%; 
+        or
+        der: 2;
     }
+    /* Hide mobile nav toggles */
     .menu-btn,
     #menu-toggle {
         display: none;
@@ -257,7 +259,6 @@ nav.navbar {
         display: flex;
         justify-content: space-evenly;
         position: static;
-        border-top: none;
         background-color: steelblue;
 
     }
@@ -286,9 +287,6 @@ nav.navbar {
         background-color: steelblue;
         color: white;
     }
-    .navbar .menu a {
-        padding: .75em;
-    }
     .menu li:has(.submenu) > a::after {
         content: '\25BC';
     }
@@ -302,10 +300,6 @@ nav.navbar {
             color: white;
             text-decoration: none;
             font-weight: normal;
-            margin-top: 0;
-            margin-left: 1px;
-            margin-right: 1px;
-            margin-bottom: 2px;
         }
         & a:hover, a:focus {
             background-color: steelblue;
@@ -333,12 +327,6 @@ nav.navbar {
         }
         & :hover > .submenu {
             display: block;
-        }
-        & > li:first-child a {
-            margin-left: 0;
-        }
-        & > li:last-child a {
-            margin-right: 0;
         }
         & a.current {
             color: white;
