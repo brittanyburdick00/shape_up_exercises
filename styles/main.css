@@ -350,7 +350,7 @@ nav.navbar {
             border-radius: 10px;
             text-decoration: none;
             display: inline-block;
-            padding: 0.75em 1.25em;
+            /* padding: 0.75em 1.25em; */
             margin: 10px;
         }
     }
