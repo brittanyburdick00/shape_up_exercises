@@ -348,6 +348,7 @@ nav.navbar {
     }
     ul.submenu {
         position: absolute;
+        top: auto;
         left: 0;
         background-color: steelblue;
         color: white;
