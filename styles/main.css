@@ -131,7 +131,7 @@ nav.navbar {
         padding-left: 1.5em;
         color: white;
         text-decoration: none;
-        font-weight: normal;
+        font-weight: bold;
         margin-bottom: 2px;
     }
     & a:hover, a:focus {
@@ -150,7 +150,7 @@ nav.navbar {
         border-radius: 10px;
         text-decoration: none;
         padding: 0.75em 1.25em;
-        padding-left: 0.5em;
+        padding-left: 0.8em;
         margin: 10px;
     }    
 
@@ -227,10 +227,7 @@ nav.navbar {
     position: absolute;
     left: 100%;
     top: 0;
-    width: max-content;
-    min-width: 10em;
-    z-index: 12;
-    border: none;
+    min-width: 15em;
 }
 .navbar .submenu a {
     padding: 0.75em 1em;
@@ -267,8 +264,6 @@ nav.navbar {
         justify-content: space-evenly;
         position: static;
         background-color: steelblue;
-        border-top: none;
-
     }
     #menu-toggle:checked ~ .menu {
          display: flex;
@@ -309,7 +304,7 @@ nav.navbar {
             padding: 1em;
             color: white;
             text-decoration: none;
-            font-weight: normal;
+            font-weight: bold;
         }
         & a:hover, a:focus {
             background-color: steelblue;
