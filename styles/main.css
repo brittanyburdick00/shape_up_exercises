@@ -278,7 +278,7 @@ nav.navbar {
     }
     .navbar .menu li a {
         display: block;
-        padding: 1em 1.5em;
+        /*padding: 1em 1.5em; */
         margin: 5px;
         color: white;
         text-decoration: none;
@@ -337,7 +337,7 @@ nav.navbar {
             display: block;
         }
         & > li:first-child a {
-            margin-left: 0;
+            margin-left: 3em;
         }
         & > li:last-child a {
             margin-right: 0;
