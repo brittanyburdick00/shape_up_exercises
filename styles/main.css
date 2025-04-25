@@ -169,10 +169,10 @@ nav.navbar {
 }
 /* .menu li:has(.submenu) small {
     display: none;
-}
+} */
 .menu li:has(.submenu):hover > .submenu {
     display: block;
-}*/ 
+}
 .menu li input[type="checkbox"] {
     display: none; /* hide checkbox itself */
 }
