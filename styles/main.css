@@ -350,7 +350,9 @@ nav.navbar {
         color: white;
         display: none;
         min-width: 100%;
-        width: max-content; 
+        width: max-content;
+        white-space: nowrap;
+        z-index: 999; 
 
         & li {
             text-align: left;
