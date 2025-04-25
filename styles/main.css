@@ -276,10 +276,11 @@ nav.navbar {
     }
     .navbar .menu li {
         position: relative;
+        text-align: center;
     }
     .navbar .menu li a {
-        display: block;
-        /*padding: 1em 1.5em; */
+        display: inline-block;
+        /* padding: 1em 1.5em;*/
         margin: 5px;
         color: white;
         text-decoration: none;
