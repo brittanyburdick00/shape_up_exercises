@@ -336,6 +336,12 @@ nav.navbar {
         & :hover > .submenu {
             display: block;
         }
+        & > li:first-child a {
+            margin-left: 0;
+        }
+        & > li:last-child a {
+            margin-right: 0;
+        }
         & a.current {
             color: white;
             border: 2px solid white;
