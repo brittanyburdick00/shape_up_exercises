@@ -7,7 +7,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    width: auto;
+    width: 950px;
     margin: auto;
     background-color: white;
 }
@@ -267,6 +267,7 @@ nav.navbar {
         justify-content: space-evenly;
         position: static;
         background-color: steelblue;
+        line-height: 10px;
     }
     #menu-toggle:checked ~ .menu {
          display: flex;
