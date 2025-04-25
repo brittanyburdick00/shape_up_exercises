@@ -58,6 +58,7 @@ section {
     margin-bottom: 0.5em;
     & p {
         padding-top: 0.5em;
+        line-height: 1.3em;
     }
     & h2 {
         padding-top: 0.5em;
@@ -75,8 +76,12 @@ section {
     & a:hover, a:focus {
         color: steelblue;
     }
+    & ul {
+        margin: 0.5em 2em;
+        list-style-type: square;
+    }
     & li {
-       
+       padding: 3px;
     }
 }
 
@@ -95,8 +100,9 @@ aside {
     }
     & ul {
         line-height: 1.5;
-        margin: 0 0.5em;
-        padding: 0 0.5em;
+        /* margin: 0 0.5em;
+        padding: 0 0.5em;*/
+        list-style-type: none;
     }
     & li {
         padding: .1em;
@@ -248,12 +254,12 @@ nav.navbar {
         flex-direction: row;
     }
     section {
-        width: 70%; 
+        width: 64%; 
         margin-right: 2em; 
         order: 1; 
     }
     aside {
-        width: 30%; 
+        width: 35%; 
         order: 2;
     }
 
@@ -277,6 +283,7 @@ nav.navbar {
     .navbar .menu li {
         position: relative;
         text-align: center;
+        line-height: 1em;
     }
     .navbar .menu li a {
         display: block;
@@ -339,7 +346,7 @@ nav.navbar {
             display: block;
         }
         & > li:first-child a {
-            margin-left: 0;
+            margin-left: 3em;
         }
         & > li:last-child a {
             margin-right: 0;
@@ -350,7 +357,7 @@ nav.navbar {
             border-radius: 10px;
             text-decoration: none;
             display: inline-block;
-            /* padding: 0.75em 1.25em; */
+            padding: 0.75em 1.25em;
             margin: 10px;
         }
     }
