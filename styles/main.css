@@ -4,6 +4,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+@font-face {
+    font-family: "American Captain";
+    src: url("../fonts/American Captain.ttf") format("truetype");
+}
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -25,6 +29,7 @@ header {
     text-align: left;
     border-bottom: 3px solid steelblue;
     & h1 {
+        font-family: "American Captain", Arial;
         color: steelblue;
         font-style: italic;
         font-size: clamp(40px, 15%, 66px);;
@@ -83,6 +88,12 @@ section {
     & li {
        padding: 3px;
     }
+}
+figure {
+    float: left;
+}
+figcaption {
+    font-weight: bold;
 }
 
 /* Sidebar */
