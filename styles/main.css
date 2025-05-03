@@ -131,6 +131,11 @@ aside {
     & a:hover, a:focus {
         color: maroon;
     }
+    & img {
+        width: 15px;
+        vertical-align: middle;
+        margin-right: 0.5em;
+    }
 }
 /* Styles for Footer */ 
 footer {
