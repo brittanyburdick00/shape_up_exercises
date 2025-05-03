@@ -88,13 +88,17 @@ section {
     & li {
        padding: 3px;
     }
+    & figure {
+		float: right;
+		margin: 0 1em .25em;
+        width: 300px;
+	}
+	& figcaption {
+		font-weight: bold;
+		border-bottom: 2.5px solid #000;
+	}
 }
-figure {
-    float: left;
-}
-figcaption {
-    font-weight: bold;
-}
+
 
 /* Sidebar */
 aside {
