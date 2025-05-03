@@ -88,14 +88,18 @@ section {
     & li {
        padding: 3px;
     }
+    & img {
+        width: 300px;
+    }
     & figure {
-		float: right;
-		margin: 0 1em .25em;
+		float: left;
+		margin: 0.5em;
+        margin-left: 0;
         width: 300px;
 	}
 	& figcaption {
 		font-weight: bold;
-		border-bottom: 2.5px solid #000;
+		border-bottom: 2.5px solid steelblue;
 	}
 }
 
@@ -132,7 +136,7 @@ aside {
         color: maroon;
     }
     & img {
-        width: 15px;
+        width: 20px;
         vertical-align: middle;
         margin-right: 0.5em;
     }
