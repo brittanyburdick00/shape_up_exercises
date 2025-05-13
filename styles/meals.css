@@ -40,19 +40,21 @@ section {
             width: auto;
           }
         }
-        &.option-group{
+        & .option-group {
             display: flex;
             flex-wrap: wrap;
             gap: 1em;
             margin-top: 0.5em;
-        } 
-        &.option-group label {
-            display: flex;
-            align-items: center;
-            gap: 0.3em;
-            font-weight: normal;
-        }
-        
+          
+            label {
+              display: flex;
+              align-items: center;
+              gap: 0.3em;
+              font-weight: normal;
+              margin: 0.25em 0;
+            }
+        }          
+
         & input[type="text"],
         input[type="email"],
         select,
