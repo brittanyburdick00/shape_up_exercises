@@ -90,6 +90,7 @@
 			  <legend>Lifestyle and goals</legend>
 	  
 			  <p>Which currently matches your present lifestyle?</p>
+			  <div class="option-group">
 			  <label><input type="radio" name="lifestyle" value="active"> Active</label>
 			  <label><input type="radio" name="lifestyle" value="moderate"> Moderate</label>
 			  <label><input type="radio" name="lifestyle" value="sedentary" checked> Sedentary</label>
@@ -98,6 +99,7 @@
 			  <label><input type="radio" name="goals" value="gain"> Gain</label>
 			  <label><input type="radio" name="goals" value="lose"> Lose</label>
 			  <label><input type="radio" name="goals" value="maintain" checked> Maintain</label>
+			  </div>
 			</fieldset>
 	  
 			<!-- Food preferences and restrictions -->
@@ -105,10 +107,13 @@
 			  <legend>Food preferences and restrictions</legend>
 	  
 			  <p>Do you have any dietary restrictions? (select all that apply)</p>
+			  <div class="option-group">
 			  <label><input type="checkbox" name="restrictions" value="vegetarian"> Vegetarian</label>
 			  <label><input type="checkbox" name="restrictions" value="gluten-free"> Gluten-free</label>
 			  <label><input type="checkbox" name="restrictions" value="kosher"> Kosher</label>
 			  <label><input type="checkbox" name="restrictions" value="low-salt"> Low salt</label>
+			  </div>
+			  
 			  <label>
 				<input type="checkbox" name="restrictions" value="other"> Other, please explain:
 			  </label>
