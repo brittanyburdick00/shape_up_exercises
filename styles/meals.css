@@ -1,0 +1,107 @@
+section {
+    font-family: Arial, sans-serif;
+  
+    & h1 {
+      font-size: 1.5em;
+      color: #000;
+      margin-bottom: 0.25em;
+    }
+    & p {
+      font-size: 0.95em;
+      margin-bottom: 1em;
+    }
+    & form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 1em;
+
+      & fieldset {
+        border: 2px solid #ccc;
+        border-radius: 6px;
+        padding: 1em;
+        margin-bottom: 1.5em;
+        & legend {
+          font-weight: bold;
+          font-size: 1em;
+          color: #b30000;
+          margin-bottom: 0.5em;
+        }
+        & label {
+          display: block;
+          margin-top: 0.75em;
+          font-weight: bold;
+  
+          input[type="radio"],
+          input[type="checkbox"] {
+            display: inline-block;
+            margin-right: 0.5em;
+            margin-top: 0.5em;
+            vertical-align: middle;
+            width: auto;
+          }
+        }
+  
+        & input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+          display: block;
+          width: 100%;
+          padding: 0.5em;
+          margin-top: 0.25em;
+          font-size: 1em;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+  
+          &::placeholder {
+            font-style: italic;
+            color: #888;
+          }
+  
+          &:required:invalid {
+            border: 2px solid red;
+          }
+        }
+        & select:required:invalid {
+          border: 2px solid red;
+        }
+        & textarea {
+          margin-top: 0.5em;
+        }
+        & p {
+          font-weight: bold;
+          margin-top: 1em;
+        }
+        & .btn {
+          padding: 0.6em 1.5em;
+          font-size: 1em;
+          font-weight: bold;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          margin-right: 1em;
+          margin-top: 1em;
+  
+          &.submit-btn {
+            background-color: steelblue;
+            color: white;
+  
+            &:hover {
+              background-color: #3a628f;
+            }
+          }
+  
+          &.reset-btn {
+            background-color: maroon;
+            color: white;
+  
+            &:hover {
+              background-color: #4d0000;
+            }
+          }
+        }
+      }
+    }
+  }
+  
