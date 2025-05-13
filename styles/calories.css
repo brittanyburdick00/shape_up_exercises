@@ -20,7 +20,11 @@ section{
             }
         }
         & tbody {
+            & tr{
+                padding: 0.25em;
+            }
             & td {
+                padding: 0 0.75em;
                 border: none;
                 text-align: left;
             }
