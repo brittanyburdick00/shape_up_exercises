@@ -38,42 +38,47 @@ section{
     }
 }
 @media only screen and (max-width: 725px) {
-    h1 {
-        font-size: 1.5em;
-        padding: 0.75em;
-    }
-    thead { display: none; }
-    tr { 
-        display: block; 
-        margin: 0;
-        padding: 0;
-    }
-    td {
-        display: block;
-        border: 1px solid black;
-        margin: 0;
-        padding: .35em .5em;
-    }
-    tbody {
-        & tr td:first-child:not(:empty) {
-        background-color: steelblue;
-        color: white;
-        font-weight: bold;
-        padding: 0.5em;
+    section { 
+        & h1 {
+            font-size: 1.5em;
+            padding: 0.75em;
         }
-        & td:first-child:empty {
-        display: none;
-        }
-        & td:nth-child(2) {
-        font-weight: bold;
-        }
-        & tr td:last-child{
-            text-align: left;
-            padding-bottom: 0.65em;
-        }
-        & tr td:last-child::after {
-            content: " calories";
-        }
-    }
+        table { 
+            & thead { display: none; }
 
+            & tbody {
+                & tr { 
+                    display: block; 
+                    margin: 0;
+                    padding: 0;
+                }
+                & td {
+                    display: block;
+                    border: 1px solid black;
+                    margin: 0;
+                    padding: .35em .5em;
+                
+                    &:first-child:not(:empty) {
+                    background-color: steelblue;
+                    color: white;
+                    font-weight: bold;
+                    padding: 0.5em;
+                    }
+                    &:first-child:empty {
+                    display: none;
+                    }
+                    &:nth-child(2) {
+                    font-weight: bold;
+                    }
+                    &:last-child{
+                        text-align: left;
+                        padding-bottom: 0.65em;
+                    }
+                    &:last-child::after {
+                        content: " calories";
+                    }
+                }    
+            }
+        }    
+    }
 }
