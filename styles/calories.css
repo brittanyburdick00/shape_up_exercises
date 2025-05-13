@@ -45,7 +45,7 @@ section{
       }
   
       & table {
-        border: none;
+        border: 1px solid black;
   
         & thead {
           display: none;
@@ -55,13 +55,12 @@ section{
           & tr {
             display: block;
             margin: 0;
-            padding: 0;
+            padding: 0 !important;
   
             & td {
               display: block;
               margin: 0;
               padding: 0.35em 0.5em;
-              border: 1px solid black;
   
               &:first-child:not(:empty) {
                 background-color: steelblue;
@@ -80,7 +79,7 @@ section{
             }
   
             & td:last-child {
-              text-align: left;
+              text-align: left !important;
               padding-bottom: 0.65em;
   
               &::after {
