@@ -78,7 +78,7 @@ section{
             .category {
                 font-weight: bold;
             }
-            & tr td:last-child {
+            & td:last-child {
                 text-align: right;
             }
         }
