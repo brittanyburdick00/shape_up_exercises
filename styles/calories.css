@@ -1,10 +1,7 @@
-
 section{
     & h1 {
         color: maroon;
         text-align: center;  
-        font-size: 1.5em;
-        padding: 0.75em;
     }
     & table {
 		width: 100%;
@@ -13,40 +10,19 @@ section{
 		line-height: 1.4;
         border: 2px solid black;
         & thead{
-            display: none;
+            background-color: steelblue;
+            color: white;
+            & th {
+				text-align: left;
+				padding: 0.75em 0.5em;
+				font-weight: bold;
+                border: none;
+            }
         }
-
         & tbody {
             & tr{
-                display: block; 
-                margin: 0;
-                padding: 0;
+                padding: 0.25em;
             }
-            & td {
-                display: block;
-                margin: 0;
-                padding: .35em .5em;
-            
-                &:first-child:not(:empty) {
-                background-color: steelblue;
-                color: white;
-                font-weight: bold;
-                padding: 0.5em;
-                }
-                &:first-child:empty {
-                display: none;
-                }
-                &:nth-child(2) {
-                font-weight: bold;
-                }
-                &:last-child{
-                    text-align: left;
-                    padding-bottom: 0.65em;
-                }
-                &:last-child::after {
-                    content: " calories";
-                }
-            } 
             & td {
                 padding: 0 0.75em;
                 border: none;
@@ -61,42 +37,59 @@ section{
         }
     }
 }
-@media only screen and (min-width: 725px) {
-    section { 
-        & h1 {
-            font-size: 1.5em;
-            padding: 0.75em;
+@media only screen and (max-width: 725px) {
+    section {
+      & h1 {
+        font-size: 1.5em;
+        padding: 0.75em;
+      }
+  
+      & table {
+        border: none;
+  
+        & thead {
+          display: none;
         }
-        & table { 
-            & thead { 
+  
+        & tbody {
+          & tr {
+            display: block;
+            margin: 0;
+            padding: 0;
+  
+            & td {
+              display: block;
+              margin: 0;
+              padding: 0.35em 0.5em;
+              border: 1px solid black;
+  
+              &:first-child:not(:empty) {
                 background-color: steelblue;
                 color: white;
-                & th {
-                    text-align: left;
-                    padding: 0.75em 0.5em;
-                    font-weight: bold;
-                    border: none;
-                }
+                font-weight: bold;
+                padding: 0.5em;
+              }
+  
+              &:first-child:empty {
+                display: none;
+              }
+  
+              &:nth-child(2) {
+                font-weight: bold;
+              }
             }
-
-            & tbody {
-                & tr { 
-                    padding: 0.25em;
-                    & td {
-                        padding: 0 0.75em;
-                        border: none;
-                        text-align: left;        
-
-                    }    
-                    &:last-child {
-                        text-align: right;
-          
-                        &::after {
-                          content: "";
-                        }
-                    }
-                }    
-            }   
-        }    
+  
+            & td:last-child {
+              text-align: left;
+              padding-bottom: 0.65em;
+  
+              &::after {
+                content: " calories";
+              }
+            }
+          }
+        }
+      }
     }
-}
+  }
+  
