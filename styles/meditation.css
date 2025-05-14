@@ -1,6 +1,12 @@
 .meditation-video {
 	display: block;
-	max-width: 100%;
+	width: 100%;
 	height: auto;
 	margin: 1em 0;
+}
+audio {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    margin-bottom: 1em;
 }
